@@ -1,18 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post Training Analysis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #004466;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .container {
+      display: flex;
+      margin-top: 70px; /* Space for the fixed header */
+    }
+    nav {
+      width: 200px;
+      background: #e6e6e6;
+      padding: 1rem;
+      box-sizing: border-box;
+      height: calc(100vh - 70px);
+      position: sticky;
+      top: 70px;
+      overflow-y: auto;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin-bottom: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #004466;
+      font-weight: bold;
+    }
+    main {
+      flex-grow: 1;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    .card p {
+      margin: 0.5rem 0;
+    }
+    .card a {
+      color: #0077aa;
+      text-decoration: none;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+    }
+  </style>
+</head>
 <body>
-  <h1>Post Training Analysis -- networks with embed vs no embed plots</h1>
-  <p><a href="trained_networks_analysis/hypertuning_lr_wd_embed_vs_without.html">View learning rate vs weight decay hyperparameter heatmap</a></p>
-  <p><a href="trained_networks_analysis/embeddings_vs_no_embeddings.html">View first epoch with 100% test accuracy + epoch vs num_freqs learned</a></p>
-  <p><a href="trained_networks_analysis/heatmaps_frequency_vs_epoch.html">View frequency vs epochs heatmaps</a></p>
-  <h1>Post Training Analysis -- network with 2 embed</h1>
-  <p><a href="trained_networks_analysis/frequency_preactivations/neuron_contributions_dft.html">View frequency and preactivation information</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a.html">D on embedding color by a</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b.html">D on embedding color by b</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y.html">D on embedding color by correct answer</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a_colored_25.html">D on embedding color by a 25(a+b) mod 59</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b_colored_25.html">D on embedding color by b 25(a+b) mod 59</a></p>
-  <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y_colored_25.html">D on embedding color by correct answer 25(a+b) mod 59</a></p>
-
+  <header>
+    <h1>Post Training Analysis</h1>
+  </header>
+  
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#section1">Networks: Embed vs No Embed</a></li>
+        <li><a href="#section2">Network with 2 Embed</a></li>
+        <!-- Add more navigation items for your additional sections -->
+      </ul>
+    </nav>
+    
+    <main>
+      <section id="section1" class="card">
+        <h2>Networks: Embed vs No Embed</h2>
+        <p><a href="trained_networks_analysis/hypertuning_lr_wd_embed_vs_without.html">Learning rate vs Weight decay heatmap</a></p>
+        <p><a href="trained_networks_analysis/embeddings_vs_no_embeddings.html">First epoch with 100% test accuracy + Epoch vs Num Frequencies Learned</a></p>
+        <p><a href="trained_networks_analysis/heatmaps_frequency_vs_epoch.html">Frequency vs Epoch heatmaps</a></p>
+      </section>
+      
+      <section id="section2" class="card">
+        <h2>Network with 2 Embed</h2>
+        <p><a href="trained_networks_analysis/frequency_preactivations/neuron_contributions_dft.html">Frequency and Preactivation Information</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a.html">3D Diffusion Plot: Color by a</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b.html">3D Diffusion Plot: Color by b</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y.html">3D Diffusion Plot: Color by Correct Answer</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a_colored_25.html">3D Diffusion Plot: Color by a 25(a+b) mod 59</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b_colored_25.html">3D Diffusion Plot: Color by b 25(a+b) mod 59</a></p>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y_colored_25.html">3D Diffusion Plot: Color by Correct Answer 25(a+b) mod 59</a></p>
+      </section>
+      
+      <!-- Add additional sections (cards) here for your other headings -->
+      
+    </main>
+  </div>
 </body>
 </html>
