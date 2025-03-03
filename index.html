@@ -7,6 +7,7 @@
   <style>
     body {
       margin: 0;
+      padding-top: 100px; /* This pushes the content down so it's not overlapped by the header */
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #333;
@@ -23,16 +24,16 @@
     }
     .container {
       display: flex;
-      margin-top: 70px; /* Space for the fixed header */
+      /* No need for margin-top now that body has padding-top */
     }
     nav {
       width: 200px;
       background: #e6e6e6;
       padding: 1rem;
       box-sizing: border-box;
-      height: calc(100vh - 70px);
+      height: calc(100vh - 100px);
       position: sticky;
-      top: 70px;
+      top: 100px;
       overflow-y: auto;
     }
     nav ul {
@@ -98,7 +99,7 @@
       <ul>
         <li><a href="#section1">Networks: Embed vs No Embed</a></li>
         <li><a href="#section2">Network with 2 Embed</a></li>
-        <!-- Add more navigation items for your additional sections -->
+        <!-- Additional navigation items -->
       </ul>
     </nav>
     
@@ -113,17 +114,4 @@
       <section id="section2" class="card">
         <h2>Network with 2 Embed</h2>
         <p><a href="trained_networks_analysis/frequency_preactivations/neuron_contributions_dft.html">Frequency and Preactivation Information</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a.html">3D Diffusion Plot: Color by a</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b.html">3D Diffusion Plot: Color by b</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y.html">3D Diffusion Plot: Color by Correct Answer</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_a_colored_25.html">3D Diffusion Plot: Color by a 25(a+b) mod 59</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_b_colored_25.html">3D Diffusion Plot: Color by b 25(a+b) mod 59</a></p>
-        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_plot_colored_by_y_colored_25.html">3D Diffusion Plot: Color by Correct Answer 25(a+b) mod 59</a></p>
-      </section>
-      
-      <!-- Add additional sections (cards) here for your other headings -->
-      
-    </main>
-  </div>
-</body>
-</html>
+        <p><a href="trained_networks_analysis/diffusions/3d_diffusion_
