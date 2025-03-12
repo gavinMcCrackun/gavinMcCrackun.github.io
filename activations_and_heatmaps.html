@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      padding-top: 100px; /* push content below header */
+      padding-top: 100px; /* space for fixed header */
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #333;
@@ -22,49 +22,88 @@
       width: 100%;
       z-index: 100;
     }
+    nav {
+      width: 200px;
+      background: #e6e6e6;
+      padding: 1rem;
+      box-sizing: border-box;
+      height: calc(100vh - 100px);
+      position: sticky;
+      top: 100px;
+      overflow-y: auto;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin-bottom: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #004466;
+      font-weight: bold;
+    }
+    /* Container for nav + main content */
     .container {
       display: flex;
-      gap: 1rem;
+    }
+    /* Main content holds the three-column layout */
+    main {
+      flex-grow: 1;
       padding: 1rem;
     }
+    /* Three column card layout */
+    .columns {
+      display: flex;
+      gap: 1rem;
+    }
     .column {
+      flex: 1;
       background: white;
       padding: 1rem;
       border-radius: 4px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      flex: 1;
       overflow-y: auto;
+      max-height: calc(100vh - 140px);
     }
     .column h2 {
       text-align: center;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
+      margin-top: 0;
     }
     .group {
-      margin-top: 1rem;
+      margin-bottom: 1.5rem;
     }
     .group h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.3rem;
     }
     .group ul {
       list-style: none;
-      padding-left: 0;
+      padding: 0;
     }
     .group li {
-      margin-bottom: 0.5rem;
+      margin: 0.3rem 0;
     }
     .group a {
       text-decoration: none;
       color: #004466;
-      font-weight: bold;
     }
     .group a:hover {
       text-decoration: underline;
     }
     @media (max-width: 768px) {
       .container {
+        flex-direction: column;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+      .columns {
         flex-direction: column;
       }
     }
@@ -74,133 +113,266 @@
   <header>
     <h1>Activations and Heatmaps</h1>
   </header>
+  
   <div class="container">
-    <!-- Column 1: no embed -->
-    <div class="column">
-      <h2>no embed</h2>
-      <!-- Only available in preactivations -->
-      <div class="group">
-        <h3>preactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=1_preactivations_seed=1.html">cluster-freq=1_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=2_preactivations_seed=1.html">cluster-freq=2_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=5_preactivations_seed=1.html">cluster-freq=5_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=8_preactivations_seed=1.html">cluster-freq=8_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=9_preactivations_seed=1.html">cluster-freq=9_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=11_preactivations_seed=1.html">cluster-freq=11_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=12_preactivations_seed=1.html">cluster-freq=12_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=13_preactivations_seed=1.html">cluster-freq=13_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=14_preactivations_seed=1.html">cluster-freq=14_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=15_preactivations_seed=1.html">cluster-freq=15_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=18_preactivations_seed=1.html">cluster-freq=18_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=20_preactivations_seed=1.html">cluster-freq=20_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=21_preactivations_seed=1.html">cluster-freq=21_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=22_preactivations_seed=1.html">cluster-freq=22_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=25_preactivations_seed=1.html">cluster-freq=25_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=26_preactivations_seed=1.html">cluster-freq=26_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=40/cluster-freq=28_preactivations_seed=1.html">cluster-freq=28_preactivations_seed=1</a></li>
-        </ul>
+    <nav>
+      <ul>
+        <li><a href="diffusions_vs_embed.html">diffusions_vs_embed</a></li>
+        <li><a href="activations_and_heatmaps.html">activations_and_heatmaps</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <div class="columns">
+        <!-- No Embed Column -->
+        <div class="column">
+          <h2>no embed</h2>
+          
+          <!-- all_clusters_to_logits -->
+          <div class="group">
+            <h3>all_clusters_to_logits</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/all_clusters_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/all_clusters_to_logits_seed=1.html">
+                  all_clusters_to_logits_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- cluster_to_logits -->
+          <div class="group">
+            <h3>cluster_to_logits</h3>
+            <ul>
+              <!-- Files from freq=0 to freq=29 -->
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=0_seed=1.html">cluster-to-logits_freq=0_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=1_seed=1.html">cluster-to-logits_freq=1_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=2_seed=1.html">cluster-to-logits_freq=2_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=3_seed=1.html">cluster-to-logits_freq=3_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=4_seed=1.html">cluster-to-logits_freq=4_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=5_seed=1.html">cluster-to-logits_freq=5_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=6_seed=1.html">cluster-to-logits_freq=6_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=7_seed=1.html">cluster-to-logits_freq=7_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=8_seed=1.html">cluster-to-logits_freq=8_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=9_seed=1.html">cluster-to-logits_freq=9_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=10_seed=1.html">cluster-to-logits_freq=10_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=11_seed=1.html">cluster-to-logits_freq=11_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=12_seed=1.html">cluster-to-logits_freq=12_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=13_seed=1.html">cluster-to-logits_freq=13_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=14_seed=1.html">cluster-to-logits_freq=14_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=15_seed=1.html">cluster-to-logits_freq=15_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=16_seed=1.html">cluster-to-logits_freq=16_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=18_seed=1.html">cluster-to-logits_freq=18_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=19_seed=1.html">cluster-to-logits_freq=19_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=20_seed=1.html">cluster-to-logits_freq=20_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=21_seed=1.html">cluster-to-logits_freq=21_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=22_seed=1.html">cluster-to-logits_freq=22_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=23_seed=1.html">cluster-to-logits_freq=23_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=24_seed=1.html">cluster-to-logits_freq=24_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=25_seed=1.html">cluster-to-logits_freq=25_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=26_seed=1.html">cluster-to-logits_freq=26_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=27_seed=1.html">cluster-to-logits_freq=27_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=28_seed=1.html">cluster-to-logits_freq=28_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-to-logits_freq=29_seed=1.html">cluster-to-logits_freq=29_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- preactivations -->
+          <div class="group">
+            <h3>preactivations</h3>
+            <ul>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=0_preactivations_seed=1.html">cluster-freq=0_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=1_preactivations_seed=1.html">cluster-freq=1_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=2_preactivations_seed=1.html">cluster-freq=2_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=3_preactivations_seed=1.html">cluster-freq=3_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=4_preactivations_seed=1.html">cluster-freq=4_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=5_preactivations_seed=1.html">cluster-freq=5_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=6_preactivations_seed=1.html">cluster-freq=6_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=7_preactivations_seed=1.html">cluster-freq=7_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=8_preactivations_seed=1.html">cluster-freq=8_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=9_preactivations_seed=1.html">cluster-freq=9_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=10_preactivations_seed=1.html">cluster-freq=10_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=11_preactivations_seed=1.html">cluster-freq=11_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=12_preactivations_seed=1.html">cluster-freq=12_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=13_preactivations_seed=1.html">cluster-freq=13_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=14_preactivations_seed=1.html">cluster-freq=14_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=15_preactivations_seed=1.html">cluster-freq=15_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=16_preactivations_seed=1.html">cluster-freq=16_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=18_preactivations_seed=1.html">cluster-freq=18_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=19_preactivations_seed=1.html">cluster-freq=19_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=20_preactivations_seed=1.html">cluster-freq=20_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=21_preactivations_seed=1.html">cluster-freq=21_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=22_preactivations_seed=1.html">cluster-freq=22_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=23_preactivations_seed=1.html">cluster-freq=23_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=24_preactivations_seed=1.html">cluster-freq=24_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=25_preactivations_seed=1.html">cluster-freq=25_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=26_preactivations_seed=1.html">cluster-freq=26_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=27_preactivations_seed=1.html">cluster-freq=27_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=28_preactivations_seed=1.html">cluster-freq=28_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/cluster-freq=29_preactivations_seed=1.html">cluster-freq=29_preactivations_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- summed_postactivations -->
+          <div class="group">
+            <h3>summed_postactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_postactivations/MLP_no_embed_seed_1_batch-size=59_k=50/summed_postactivations_seed=1.html">
+                  summed_postactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- summed_preactivations -->
+          <div class="group">
+            <h3>summed_preactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_preactivations/MLP_no_embed_seed_1_batch-size=59_k=50/summed_preactivations_seed=1.html">
+                  summed_preactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- One Embed Matrix Column -->
+        <div class="column">
+          <h2>one embed matrix</h2>
+          
+          <!-- all_clusters_to_logits -->
+          <div class="group">
+            <h3>all_clusters_to_logits</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/all_clusters_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/all_clusters_to_logits_seed=1.html">
+                  all_clusters_to_logits_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- cluster_to_logits -->
+          <div class="group">
+            <h3>cluster_to_logits</h3>
+            <ul>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=8_seed=1.html">cluster-to-logits_freq=8_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=19_seed=1.html">cluster-to-logits_freq=19_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=24_seed=1.html">cluster-to-logits_freq=24_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=26_seed=1.html">cluster-to-logits_freq=26_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=29_seed=1.html">cluster-to-logits_freq=29_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- preactivations -->
+          <div class="group">
+            <h3>preactivations</h3>
+            <ul>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=8_preactivations_seed=1.html">cluster-freq=8_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=19_preactivations_seed=1.html">cluster-freq=19_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=24_preactivations_seed=1.html">cluster-freq=24_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=26_preactivations_seed=1.html">cluster-freq=26_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=29_preactivations_seed=1.html">cluster-freq=29_preactivations_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- summed_postactivations -->
+          <div class="group">
+            <h3>summed_postactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_postactivations/MLP_one_embed_seed_1_batch-size=59_k=40/summed_postactivations_seed=1.html">
+                  summed_postactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- summed_preactivations -->
+          <div class="group">
+            <h3>summed_preactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/summed_preactivations_seed=1.html">
+                  summed_preactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Two Embed Matrices Column -->
+        <div class="column">
+          <h2>two embed matrices</h2>
+          
+          <!-- all_clusters_to_logits -->
+          <div class="group">
+            <h3>all_clusters_to_logits</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/all_clusters_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/all_clusters_to_logits_seed=1.html">
+                  all_clusters_to_logits_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- cluster_to_logits -->
+          <div class="group">
+            <h3>cluster_to_logits</h3>
+            <ul>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=3_seed=1.html">cluster-to-logits_freq=3_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=5_seed=1.html">cluster-to-logits_freq=5_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=15_seed=1.html">cluster-to-logits_freq=15_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=16_seed=1.html">cluster-to-logits_freq=16_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- preactivations -->
+          <div class="group">
+            <h3>preactivations</h3>
+            <ul>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=3_preactivations_seed=1.html">cluster-freq=3_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=5_preactivations_seed=1.html">cluster-freq=5_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=15_preactivations_seed=1.html">cluster-freq=15_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=16_preactivations_seed=1.html">cluster-freq=16_preactivations_seed=1</a></li>
+              <li><a href="trained_network_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
+            </ul>
+          </div>
+          
+          <!-- summed_postactivations -->
+          <div class="group">
+            <h3>summed_postactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_postactivations/MLP_two_embed_seed_1_batch-size=59_k=40/summed_postactivations_seed=1.html">
+                  summed_postactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- summed_preactivations -->
+          <div class="group">
+            <h3>summed_preactivations</h3>
+            <ul>
+              <li>
+                <a href="trained_network_analysis/features=128_num_neurons=512/summed_preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/summed_preactivations_seed=1.html">
+                  summed_preactivations_seed=1
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Column 2: one embed matrix -->
-    <div class="column">
-      <h2>one embed matrix</h2>
-      <!-- all_clusters_to_logits -->
-      <div class="group">
-        <h3>all_clusters_to_logits</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/all_clusters_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/all_clusters_to_logits_seed=1.html">all_clusters_to_logits_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- cluster_to_logits -->
-      <div class="group">
-        <h3>cluster_to_logits</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=8_seed=1.html">cluster-to-logits_freq=8_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=19_seed=1.html">cluster-to-logits_freq=19_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=24_seed=1.html">cluster-to-logits_freq=24_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=26_seed=1.html">cluster-to-logits_freq=26_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=29_seed=1.html">cluster-to-logits_freq=29_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- preactivations -->
-      <div class="group">
-        <h3>preactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=8_preactivations_seed=1.html">cluster-freq=8_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=19_preactivations_seed=1.html">cluster-freq=19_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=24_preactivations_seed=1.html">cluster-freq=24_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=26_preactivations_seed=1.html">cluster-freq=26_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=29_preactivations_seed=1.html">cluster-freq=29_preactivations_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- summed_postactivations -->
-      <div class="group">
-        <h3>summed_postactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/summed_postactivations/MLP_one_embed_seed_1_batch-size=59_k=40/summed_postactivations_seed=1.html">summed_postactivations_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- summed_preactivations -->
-      <div class="group">
-        <h3>summed_preactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/summed_preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/summed_preactivations_seed=1.html">summed_preactivations_seed=1</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Column 3: two embed matrices -->
-    <div class="column">
-      <h2>two embed matrices</h2>
-      <!-- all_clusters_to_logits -->
-      <div class="group">
-        <h3>all_clusters_to_logits</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/all_clusters_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/all_clusters_to_logits_seed=1.html">all_clusters_to_logits_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- cluster_to_logits -->
-      <div class="group">
-        <h3>cluster_to_logits</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=3_seed=1.html">cluster-to-logits_freq=3_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=5_seed=1.html">cluster-to-logits_freq=5_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=15_seed=1.html">cluster-to-logits_freq=15_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=16_seed=1.html">cluster-to-logits_freq=16_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- preactivations -->
-      <div class="group">
-        <h3>preactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=3_preactivations_seed=1.html">cluster-freq=3_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=5_preactivations_seed=1.html">cluster-freq=5_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=15_preactivations_seed=1.html">cluster-freq=15_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=16_preactivations_seed=1.html">cluster-freq=16_preactivations_seed=1</a></li>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- summed_postactivations -->
-      <div class="group">
-        <h3>summed_postactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/summed_postactivations/MLP_two_embed_seed_1_batch-size=59_k=40/summed_postactivations_seed=1.html">summed_postactivations_seed=1</a></li>
-        </ul>
-      </div>
-      <!-- summed_preactivations -->
-      <div class="group">
-        <h3>summed_preactivations</h3>
-        <ul>
-          <li><a href="trained_networks_analysis/features=128_num_neurons=512/summed_preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/summed_preactivations_seed=1.html">summed_preactivations_seed=1</a></li>
-        </ul>
-      </div>
-    </div>
+    </main>
   </div>
 </body>
 </html>
