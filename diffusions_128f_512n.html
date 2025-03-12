@@ -73,18 +73,28 @@
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.3rem;
     }
-    .group ul {
+    .subgroup {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    .subgroup h4 {
+      margin: 0.5rem 0 0.3rem;
+      font-size: 1rem;
+      border-bottom: 1px dashed #ccc;
+      padding-bottom: 0.2rem;
+    }
+    .subgroup ul {
       list-style: none;
       padding: 0;
     }
-    .group li {
-      margin: 0.5rem 0;
+    .subgroup li {
+      margin: 0.3rem 0;
     }
-    .group a {
+    .subgroup a {
       color: #0077aa;
       text-decoration: none;
     }
-    .group a:hover {
+    .subgroup a:hover {
       text-decoration: underline;
     }
     @media (max-width: 768px) {
@@ -126,62 +136,117 @@
         <h2>one embed</h2>
         <p>Placeholder: Data coming soon.</p>
       </div>
-      <!-- Column 3: two embed with diffusion data -->
+      <!-- Column 3: two embed with diffusion and PCA data -->
       <div class="card">
         <h2>two embed</h2>
         
-        <!-- Group 1: 3D Diffusion Plots -->
+        <!-- Group 1: 3D Diffusion Plots sorted by frequency -->
         <div class="group">
           <h3>3D Diffusion Plots</h3>
-          <ul>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_4.html">3d_diffusion_plot_colored_by_a_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_7.html">3d_diffusion_plot_colored_by_a_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_10.html">3d_diffusion_plot_colored_by_a_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_23.html">3d_diffusion_plot_colored_by_a_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_25.html">3d_diffusion_plot_colored_by_a_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a.html">3d_diffusion_plot_colored_by_a</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_4.html">3d_diffusion_plot_colored_by_b_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_7.html">3d_diffusion_plot_colored_by_b_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_10.html">3d_diffusion_plot_colored_by_b_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_23.html">3d_diffusion_plot_colored_by_b_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_25.html">3d_diffusion_plot_colored_by_b_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b.html">3d_diffusion_plot_colored_by_b</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_4.html">3d_diffusion_plot_colored_by_y_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_7.html">3d_diffusion_plot_colored_by_y_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_10.html">3d_diffusion_plot_colored_by_y_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_23.html">3d_diffusion_plot_colored_by_y_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_25.html">3d_diffusion_plot_colored_by_y_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y.html">3d_diffusion_plot_colored_by_y</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plots_combined.html">3d_diffusion_plots_combined</a></li>
-          </ul>
+          <div class="subgroup">
+            <h4>Frequency 4</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_4.html">a_colored_4</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_4.html">b_colored_4</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_4.html">y_colored_4</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 7</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_7.html">a_colored_7</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_7.html">b_colored_7</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_7.html">y_colored_7</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 10</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_10.html">a_colored_10</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_10.html">b_colored_10</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_10.html">y_colored_10</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 23</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_23.html">a_colored_23</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_23.html">b_colored_23</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_23.html">y_colored_23</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 25</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a_colored_25.html">a_colored_25</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b_colored_25.html">b_colored_25</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y_colored_25.html">y_colored_25</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Default</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_a.html">a</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_b.html">b</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_diffusion_plot_colored_by_y.html">y</a></li>
+            </ul>
+          </div>
         </div>
         
-        <!-- Group 2: 3D PCA Plots -->
+        <!-- Group 2: 3D PCA Plots sorted by frequency -->
         <div class="group">
           <h3>3D PCA Plots</h3>
-          <ul>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_4.html">3d_pca_plot_colored_by_a_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_7.html">3d_pca_plot_colored_by_a_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_10.html">3d_pca_plot_colored_by_a_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_23.html">3d_pca_plot_colored_by_a_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_25.html">3d_pca_plot_colored_by_a_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a.html">3d_pca_plot_colored_by_a</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_4.html">3d_pca_plot_colored_by_b_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_7.html">3d_pca_plot_colored_by_b_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_10.html">3d_pca_plot_colored_by_b_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_23.html">3d_pca_plot_colored_by_b_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_25.html">3d_pca_plot_colored_by_b_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b.html">3d_pca_plot_colored_by_b</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_4.html">3d_pca_plot_colored_by_y_colored_4</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_7.html">3d_pca_plot_colored_by_y_colored_7</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_10.html">3d_pca_plot_colored_by_y_colored_10</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_23.html">3d_pca_plot_colored_by_y_colored_23</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_25.html">3d_pca_plot_colored_by_y_colored_25</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y.html">3d_pca_plot_colored_by_y</a></li>
-          </ul>
+          <div class="subgroup">
+            <h4>Frequency 4</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_4.html">a_colored_4</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_4.html">b_colored_4</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_4.html">y_colored_4</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 7</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_7.html">a_colored_7</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_7.html">b_colored_7</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_7.html">y_colored_7</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 10</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_10.html">a_colored_10</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_10.html">b_colored_10</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_10.html">y_colored_10</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 23</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_23.html">a_colored_23</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_23.html">b_colored_23</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_23.html">y_colored_23</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Frequency 25</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a_colored_25.html">a_colored_25</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b_colored_25.html">b_colored_25</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y_colored_25.html">y_colored_25</a></li>
+            </ul>
+          </div>
+          <div class="subgroup">
+            <h4>Default</h4>
+            <ul>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a.html">a</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b.html">b</a></li>
+              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y.html">y</a></li>
+            </ul>
+          </div>
         </div>
         
-        <!-- Group 3: New Diffusion Plots -->
+        <!-- Group 3: New Diffusion Plots (unsorted) -->
         <div class="group">
           <h3>New Diffusion Plots</h3>
           <ul>
