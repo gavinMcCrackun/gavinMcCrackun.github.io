@@ -1,97 +1,173 @@
 /* style.css */
 
+/* General Styles */
 body {
-    margin: 0;
-    padding-top: 100px; /* Space for the fixed header */
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    background: #004466;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-  }
-  
+  margin: 0;
+  padding-top: 100px; /* space for fixed header */
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #004466;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+}
+
+/* Navigation Styles */
+nav {
+  width: 300px;
+  background: #e6e6e6;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: calc(100vh - 100px);
+  position: sticky;
+  top: 100px;
+  overflow-y: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #004466;
+  font-weight: bold;
+}
+
+/* Main Content - Three Card Grid */
+main {
+  flex-grow: 1;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+/* Columns Layout (for pages that use a multi-column structure) */
+.columns {
+  display: flex;
+  gap: 1rem;
+}
+
+.column {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.column h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Group and Subgroup Styles (for nested content within cards/columns) */
+.group {
+  margin-bottom: 1.5rem;
+}
+
+.group h3 {
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+.group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.group li {
+  margin: 0.3rem 0;
+}
+
+.group a {
+  text-decoration: none;
+  color: #004466;
+}
+
+.group a:hover {
+  text-decoration: underline;
+}
+
+.subgroup {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.subgroup h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1rem;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 0.2rem;
+}
+
+.subgroup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.subgroup li {
+  margin: 0.3rem 0;
+}
+
+.subgroup a {
+  color: #0077aa;
+  text-decoration: none;
+}
+
+.subgroup a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .container {
-    display: flex;
+    flex-direction: column;
   }
-  
   nav {
-    width: 300px;
-    background: #e6e6e6;
-    padding: 1rem;
-    box-sizing: border-box;
-    height: calc(100vh - 100px);
-    position: sticky;
-    top: 100px;
-    overflow-y: auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
   }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav li {
-    margin-bottom: 1rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #004466;
-    font-weight: bold;
-  }
-  
   main {
-    flex-grow: 1;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr;
   }
-  
-  .card {
-    background: white;
-    padding: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .columns {
+    flex-direction: column;
   }
-  
-  .card h2 {
-    margin-top: 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
-  }
-  
-  .card p {
-    margin: 0.5rem 0;
-  }
-  
-  .card a {
-    color: #0077aa;
-    text-decoration: none;
-  }
-  
-  .card a:hover {
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-    nav {
-      width: 100%;
-      height: auto;
-      position: relative;
-      top: 0;
-    }
-  }
-  
+}

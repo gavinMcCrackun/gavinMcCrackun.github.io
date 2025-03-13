@@ -3,115 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Post Training Analysis</title>
-  <style>
-    body {
-      margin: 0;
-      padding-top: 100px; /* This pushes the content down so it's not overlapped by the header */
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #004466;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-    }
-    .container {
-      display: flex;
-    }
-    nav {
-      width: 300px;
-      background: #e6e6e6;
-      padding: 1rem;
-      box-sizing: border-box;
-      height: calc(100vh - 100px);
-      position: sticky;
-      top: 100px;
-      overflow-y: auto;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav li {
-      margin-bottom: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #004466;
-      font-weight: bold;
-    }
-    main {
-      flex-grow: 1;
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    .card {
-      background: white;
-      padding: 1rem;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .card h2 {
-      margin-top: 0;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-    .group {
-      margin-bottom: 1.5rem;
-    }
-    .group h3 {
-      margin-bottom: 0.3rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-    .subgroup {
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    .subgroup h4 {
-      margin: 0.5rem 0 0.3rem;
-      font-size: 1rem;
-      border-bottom: 1px dashed #ccc;
-      padding-bottom: 0.2rem;
-    }
-    .subgroup ul {
-      list-style: none;
-      padding: 0;
-    }
-    .subgroup li {
-      margin: 0.3rem 0;
-    }
-    .subgroup a {
-      color: #0077aa;
-      text-decoration: none;
-    }
-    .subgroup a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-      }
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Diffusions n stuff</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -126,17 +19,17 @@
       </ul>
     </nav>
     <main>
-      <!-- Column 1: no embed (one hot) placeholder -->
+      <!-- Card 1: no embed (one hot) placeholder -->
       <div class="card">
         <h2>no embed (one hot)</h2>
         <p>Placeholder: Data coming soon.</p>
       </div>
-      <!-- Column 2: one embed placeholder -->
+      <!-- Card 2: one embed placeholder -->
       <div class="card">
         <h2>one embed</h2>
         <p>Placeholder: Data coming soon.</p>
       </div>
-      <!-- Column 3: two embed with diffusion and PCA data -->
+      <!-- Card 3: two embed with diffusion and PCA data -->
       <div class="card">
         <h2>two embed</h2>
         
@@ -240,40 +133,4 @@
             <h4>Default</h4>
             <ul>
               <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_a.html">a</a></li>
-              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_b.html">b</a></li>
-              <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/3d_pca_plot_colored_by_y.html">y</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Group 3: New Diffusion Plots (unsorted) -->
-        <div class="group">
-          <h3>New Diffusion Plots</h3>
-          <ul>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/new_diffusion_plot_horizontal.html">new_diffusion_plot_horizontal</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/new_diffusion_plot_p_squared_2d.html">new_diffusion_plot_p_squared_2d</a></li>
-            <li><a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/new_diffusion_plot_vertical.html">new_diffusion_plot_vertical</a></li>
-          </ul>
-        </div>
-        
-        <!-- Group 4: Additional -->
-        <div class="group">
-          <h3>Additional</h3>
-          <ul>
-            <li>
-              <a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/p=59_bs=59_nn=512_wd=0.0001_epochs=500_training_set_size=2950/neuron_contributions_dft.html">
-                neuron_contributions_dft
-              </a>
-            </li>
-            <li>
-              <a href="trained_networks_analysis/features=128_num_neurons=512/diffusions_2_embed/p=59_bs=59_nn=512_wd=0.0001_epochs=500_training_set_size=2950/interactive_embedding_map_horizontal.html">
-                interactive_embedding_map_horizontal
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
-  </div>
-</body>
-</html>
+      

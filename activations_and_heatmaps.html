@@ -4,110 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Activations and Heatmaps: 512 neurons and 128 embed dimension</title>
-  <style>
-    body {
-      margin: 0;
-      padding-top: 100px; /* space for fixed header */
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #004466;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-    }
-    nav {
-      width: 300px;
-      background: #e6e6e6;
-      padding: 1rem;
-      box-sizing: border-box;
-      height: calc(100vh - 100px);
-      position: sticky;
-      top: 100px;
-      overflow-y: auto;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav li {
-      margin-bottom: 1rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #004466;
-      font-weight: bold;
-    }
-    /* Container for nav + main content */
-    .container {
-      display: flex;
-    }
-    /* Main content holds the three-column layout */
-    main {
-      flex-grow: 1;
-      padding: 1rem;
-    }
-    /* Three column card layout */
-    .columns {
-      display: flex;
-      gap: 1rem;
-    }
-    .column {
-      flex: 1;
-      background: white;
-      padding: 1rem;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      overflow-y: auto;
-      max-height: calc(100vh - 140px);
-    }
-    .column h2 {
-      text-align: center;
-      margin-top: 0;
-    }
-    .group {
-      margin-bottom: 1.5rem;
-    }
-    .group h3 {
-      margin-bottom: 0.3rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
-    .group ul {
-      list-style: none;
-      padding: 0;
-    }
-    .group li {
-      margin: 0.3rem 0;
-    }
-    .group a {
-      text-decoration: none;
-      color: #004466;
-    }
-    .group a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-      }
-      .columns {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -128,8 +25,6 @@
         <!-- No Embed Column -->
         <div class="column">
           <h2>no embed</h2>
-          
-          <!-- all_clusters_to_logits -->
           <div class="group">
             <h3>all_clusters_to_logits</h3>
             <ul>
@@ -140,8 +35,6 @@
               </li>
             </ul>
           </div>
-          
-          <!-- cluster_to_logits -->
           <div class="group">
             <h3>cluster_to_logits</h3>
             <ul>
@@ -244,8 +137,6 @@
         <!-- One Embed Matrix Column -->
         <div class="column">
           <h2>one embed matrix</h2>
-          
-          <!-- all_clusters_to_logits -->
           <div class="group">
             <h3>all_clusters_to_logits</h3>
             <ul>
@@ -256,8 +147,6 @@
               </li>
             </ul>
           </div>
-          
-          <!-- cluster_to_logits -->
           <div class="group">
             <h3>cluster_to_logits</h3>
             <ul>
@@ -269,8 +158,6 @@
               <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=29_seed=1.html">cluster-to-logits_freq=29_seed=1</a></li>
             </ul>
           </div>
-          
-          <!-- preactivations -->
           <div class="group">
             <h3>preactivations</h3>
             <ul>
@@ -282,8 +169,6 @@
               <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_one_embed_seed_1_batch-size=59_k=40/cluster-freq=29_preactivations_seed=1.html">cluster-freq=29_preactivations_seed=1</a></li>
             </ul>
           </div>
-          
-          <!-- summed_postactivations -->
           <div class="group">
             <h3>summed_postactivations</h3>
             <ul>
@@ -294,8 +179,6 @@
               </li>
             </ul>
           </div>
-          
-          <!-- summed_preactivations -->
           <div class="group">
             <h3>summed_preactivations</h3>
             <ul>
@@ -311,8 +194,6 @@
         <!-- Two Embed Matrices Column -->
         <div class="column">
           <h2>two embed matrices</h2>
-          
-          <!-- all_clusters_to_logits -->
           <div class="group">
             <h3>all_clusters_to_logits</h3>
             <ul>
@@ -323,8 +204,6 @@
               </li>
             </ul>
           </div>
-          
-          <!-- cluster_to_logits -->
           <div class="group">
             <h3>cluster_to_logits</h3>
             <ul>
@@ -335,8 +214,6 @@
               <li><a href="trained_networks_analysis/features=128_num_neurons=512/cluster_to_logits/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-to-logits_freq=17_seed=1.html">cluster-to-logits_freq=17_seed=1</a></li>
             </ul>
           </div>
-          
-          <!-- preactivations -->
           <div class="group">
             <h3>preactivations</h3>
             <ul>
@@ -347,8 +224,6 @@
               <li><a href="trained_networks_analysis/features=128_num_neurons=512/preactivations/MLP_two_embed_seed_1_batch-size=59_k=40/cluster-freq=17_preactivations_seed=1.html">cluster-freq=17_preactivations_seed=1</a></li>
             </ul>
           </div>
-          
-          <!-- summed_postactivations -->
           <div class="group">
             <h3>summed_postactivations</h3>
             <ul>
@@ -359,8 +234,6 @@
               </li>
             </ul>
           </div>
-          
-          <!-- summed_preactivations -->
           <div class="group">
             <h3>summed_preactivations</h3>
             <ul>
