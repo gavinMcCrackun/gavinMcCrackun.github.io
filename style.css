@@ -1,0 +1,75 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding-top: 100px; /* This pushes the content down so it's not overlapped by the header */
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background: #004466;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  nav {
+    width: 300px;
+    background: #e6e6e6;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: calc(100vh - 100px);
+    position: sticky;
+    top: 100px;
+    overflow-y: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-bottom: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #004466;
+    font-weight: bold;
+  }
+  
+  main {
+    flex-grow: 1;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    nav {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 0;
+    }
+  }
+  
